@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytics Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="global-nav card">
+      <div class="brand">AH Gestão</div>
+      <nav id="topTabs" class="top-tabs" aria-label="General sections"></nav>
+      <div class="global-actions">
+        <button class="ghost" id="resetFilters">Reset filters</button>
+        <button class="primary" id="exportData">Export CSV</button>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <aside class="side-nav card">
+        <p class="side-title">Section menu</p>
+        <ul id="sideSubtabs" class="side-subtabs"></ul>
+      </aside>
+
+      <section class="dashboard">
+        <header class="topbar card">
+          <div>
+            <p class="eyebrow" id="breadcrumb">Finances / Growth</p>
+            <h1 id="dashboardTitle">Growth Analytics Dashboard</h1>
+          </div>
+        </header>
+
+        <section class="kpi-grid">
+          <article class="card kpi">
+            <p>Revenue</p>
+            <h2 id="kpiRevenue">$0</h2>
+            <span class="trend up">+12.8%</span>
+          </article>
+          <article class="card kpi">
+            <p>Customers</p>
+            <h2 id="kpiCustomers">0</h2>
+            <span class="trend up">+6.4%</span>
+          </article>
+          <article class="card kpi">
+            <p>Conversion</p>
+            <h2 id="kpiConversion">0%</h2>
+            <span class="trend down">-1.2%</span>
+          </article>
+          <article class="card kpi">
+            <p>Avg. Order Value</p>
+            <h2 id="kpiAov">$0</h2>
+            <span class="trend up">+2.1%</span>
+          </article>
+        </section>
+
+        <section class="layout-grid">
+          <article class="card panel wide">
+            <div class="panel-head">
+              <h3>Revenue trend by month</h3>
+              <p id="activeFilterLabel">All channels selected</p>
+            </div>
+            <svg id="trendChart" viewBox="0 0 860 320" role="img" aria-label="Revenue trend"></svg>
+          </article>
+
+          <article class="card panel">
+            <div class="panel-head">
+              <h3>Revenue by channel</h3>
+              <p>Click bars to cross filter</p>
+            </div>
+            <div id="channelBars" class="channel-bars"></div>
+          </article>
+
+          <article class="card panel">
+            <div class="panel-head">
+              <h3>Region mix</h3>
+              <p>Contribution to revenue</p>
+            </div>
+            <ul id="regionList" class="region-list"></ul>
+          </article>
+        </section>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
